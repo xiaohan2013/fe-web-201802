@@ -1,0 +1,63 @@
+@import "./base.scss";
+
+.catagory{
+    .container{
+      margin:40px auto;
+    }
+    .left-menu{
+        width: 20%;
+    }
+    .right-items{
+        width: 70%;
+        .product-items{
+          .nav{
+            text-align: center;
+            .nav-wrapper{
+              display: inline-block;
+            }
+          }
+        }
+        .product-detail{
+          .card-image{
+            width: 50%;
+          }
+          .card-desc{
+            width: 40%;
+            border:none;
+          }
+        }
+    }
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+
+      img{
+        width: 100%;
+      }
+    }
+    .product-container{
+      .row{
+        margin-bottom: 20px;
+      }
+
+    }
+}
+
