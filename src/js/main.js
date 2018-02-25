@@ -21,6 +21,7 @@ new Swiper('.clients, .partners', {
     slidesPerView: 3,
     spaceBetween: 30,
     freeMode: true,
+    // virtualSize: 100,
 });
 
 

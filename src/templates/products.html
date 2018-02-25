@@ -12,15 +12,15 @@
 <body>
     <div class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">
-        <img src="images/logo.jpg" width="30" height="30" alt="">
+        <img src="images/logo.jpg" width="60" height="30" alt="">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="#">首页</a>
+            <a class="nav-link active" href="index.html">首页</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">关于我们</a>
@@ -40,14 +40,14 @@
         </ul>
       </div>
     </div>
-    <div class="catagory">
+    <div class="category">
         <div class="container clearfix">
             <div class="left-menu float-left">
                 <div id="accordion">
                   <div class="card">
                     <div class="card-header">
                       <h5 class="mb-0">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="btn btn-link category-btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" data-category="1">
                           按防护功能分类
                         </button>
                       </h5>
@@ -56,11 +56,11 @@
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                       <div class="card-body">
                         <ul>
-                            <li><a class="btn bnt-link">防弹系列</a></li>
-                            <li><a class="btn bnt-link">防刺系列</a></li>
-                            <li><a class="btn bnt-link">防爆系列</a></li>
-                            <li><a class="btn bnt-link">战术系列</a></li>
-                            <li><a class="btn bnt-link">防身系列</a></li>
+                            <li><a class="btn bnt-link serial-btn">防弹系列</a></li>
+                            <li><a class="btn bnt-link serial-btn">防刺系列</a></li>
+                            <li><a class="btn bnt-link serial-btn">防爆系列</a></li>
+                            <li><a class="btn bnt-link serial-btn">战术系列</a></li>
+                            <li><a class="btn bnt-link serial-btn">防身系列</a></li>
                         </ul>
                       </div>
                     </div>
@@ -68,7 +68,7 @@
                   <div class="card">
                     <div class="card-header" id="headingTwo">
                       <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <button class="btn btn-link collapsed category-btn" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" data-category="2">
                           按使用人群分类
                         </button>
                       </h5>
@@ -82,7 +82,7 @@
                   <div class="card">
                     <div class="card-header" id="headingThree">
                       <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <button class="btn btn-link collapsed category-btn" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" data-category="3">
                           其他分类
                         </button>
                       </h5>
@@ -101,9 +101,9 @@
                     <div class="product-items">
                       <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                          <li class="breadcrumb-item"><a href="#">产品中心</a></li>
-                          <li class="breadcrumb-item"><a href="#">防护功能分类</a></li>
-                          <li class="breadcrumb-item active" aria-current="page">防弹系列</li>
+                          <li class="breadcrumb-item" data-current-category="">产品中心</li>
+                          <li class="breadcrumb-item" data-current-category="">防护功能分类</li>
+                          <li class="breadcrumb-item" data-current-category="">防弹系列</li>
                         </ol>
                       </nav>
                       <div class="product-list clearfix">
@@ -225,24 +225,32 @@
                           <div class="card-header">
                             <ul class="nav nav-tabs card-header-tabs">
                               <li class="nav-item">
-                                <a class="nav-link active" href="#">产品介绍</a>
+                                <a class="nav-link active" ref="intro">产品介绍</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#">产品介绍</a>
+                                <a class="nav-link" ref="desc">产品介绍</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link" href="#">技术指标</a>
+                                <a class="nav-link" ref="metric">技术指标</a>
                               </li>
                             </ul>
                           </div>
                           <div class="card-body">
-                            <ol>
-                              <li>设备组装时间短，无需连线及携带庞大信号收发器</li>
-                              <li>重量轻，平衡人性化设计方便操作</li>
-                              <li>高发射功率，可快速大范围检测</li>
-                              <li>圆性极化天线缩减搜索时间并减少漏报</li>
-                              <li>双谐波分辨率算法最小误报</li>
-                            </ol>
+                            <div class="product product-intro active">
+                              <ol>
+                                <li>设备组装时间短，无需连线及携带庞大信号收发器</li>
+                                <li>重量轻，平衡人性化设计方便操作</li>
+                                <li>高发射功率，可快速大范围检测</li>
+                                <li>圆性极化天线缩减搜索时间并减少漏报</li>
+                                <li>双谐波分辨率算法最小误报</li>
+                              </ol>
+                            </div>
+                            <div class="product product-desc">
+                              这是产品描述
+                            </div>
+                            <div class="product product-metric">
+                              这是技术指标
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -252,7 +260,7 @@
                             <a class="btn btn-link float-left">上一页：手持式爆炸物毒品探测仪</a>
                             <a class="btn btn-link float-right">下一页：排爆机器人</a>
                           </div>
-                          <a class="btn btn-primary" href="#" role="button">返回</a>
+                          <a class="btn btn-primary btn-back" href="#" role="button">返回</a>
                         </div>
                       </div>
                     </div>

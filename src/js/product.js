@@ -8,15 +8,6 @@ import "../sass/product.scss";
 
 $('.collapse').collapse();
 
-var swiper = new Swiper('.swiper-container', {
-    spaceBetween: 30,
-    slidesPerView:3,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    }
-});
-
 $.fn.jzoom = function(options) {
     return this.each(function() {
         // 设置默认属性
@@ -228,10 +219,61 @@ $.fn.jzoom = function(options) {
     });
 };
 
-$(".img-product").jzoom({
-    width: 200,
-    height: 200,
-});
+function ProductHelper($, container){
+    this.$ = $;
+    this.$el = $(container);
+    console.log(this)
+    this.init();
+    return this;
+}
+
+ProductHelper.prototype.init = function(){
+    this.$el.on('click', '.category-btn', this.handleClick.bind(this, [this, "category"]));
+    this.$el.on('click', '.serial-btn', this.handleClick.bind(this, [this, 'serial']));
+    this.$el.on('click', '.breadcrumb-item', this.selectCategory.bind(this, [this, 'item']));
+    this.$el.on('click', '.btn-back', this.showItems.bind(this));
+    this.$el.on('click', '.card-img-top', this.showDetail.bind(this));
+    this.$el.on('click', '.desc .nav-link', this.navSelection.bind(this));
+}
+ProductHelper.prototype.selectCategory = function(evt){
+    console.log(evt)
+
+}
+ProductHelper.prototype.handleClick = function(evt){
+    console.log(evt)
+}
+ProductHelper.prototype.render = function(){
+}
+ProductHelper.prototype.showDetail = function(item){
+    this.$el.find('.product-items').hide();
+    this.$el.find('.product-detail').show();
+    this.$el.find(".img-product").jzoom({
+        width: 200,
+        height: 200,
+    });
+    var swiper = new Swiper('.swiper-container', {
+        spaceBetween: 30,
+        slidesPerView:3,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        }
+    });
+}
+ProductHelper.prototype.showItems = function(){
+    this.$el.find('.product-items').show();
+    this.$el.find('.product-detail').hide();
+}
+ProductHelper.prototype.navSelection = function(evt){
+    console.log(evt)
+    this.$el.find('.nav-tabs .active').removeClass('active');
+    this.$(evt.currentTarget).addClass('active');
+    var _ref = this.$(evt.currentTarget).attr("ref");
+    this.$el.find('.desc .card-body .product.active').removeClass('active');
+    this.$el.find('.desc .card-body .product-'+_ref).addClass('active');
+}
+ProductHelper.prototype.request = function(){}
+new ProductHelper($, '.category');
 
 
 

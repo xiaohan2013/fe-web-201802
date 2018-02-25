@@ -1,6 +1,6 @@
 @import "./base.scss";
 
-.catagory{
+.category{
     .container{
       margin:40px auto;
     }
@@ -10,20 +10,57 @@
     .right-items{
         width: 70%;
         .product-items{
+          display: block;
           .nav{
             text-align: center;
             .nav-wrapper{
               display: inline-block;
             }
           }
+          .breadcrumb{
+            .breadcrumb-item{
+              &:first-child{
+                &:before{
+                  content: "";
+                }
+              }
+              cursor: pointer;
+              color: blue;
+              &:hover{
+                text-decoration: underline;
+              }
+              &:before{
+                content: ">";
+              }
+            }
+          }
+          .card-img-top{
+            cursor: pointer;
+          }
         }
         .product-detail{
+          display:none;
           .card-image{
             width: 50%;
           }
           .card-desc{
             width: 40%;
             border:none;
+          }
+          .desc{
+            .nav-tabs{
+              .nav-item{
+                cursor: pointer;
+              }
+            }
+            .card-body{
+              .product{
+                display: none;
+              }
+              .active{
+                display: block;
+              }
+            }
           }
         }
     }

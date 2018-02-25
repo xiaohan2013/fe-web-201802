@@ -9,6 +9,23 @@ html, body{
     clear:both;
 }
 
+.navbar{
+    .navbar-brand{
+        position: absolute;
+        left: 10%;
+    }
+    .navbar-nav{
+        margin: 0 auto;
+        padding:1rem 0;
+        .nav-item{
+            margin: 0rem 2rem;
+            .nav-link{
+
+            }
+        }
+    }
+}
+
 .footer-nav{
     background:#EDEDED;
     .f-nav{
@@ -55,17 +72,18 @@ html, body{
             text-decoration: none;
             color:#B6B6AF;
             position:relative;
+            margin: 0 8px;
             &:-webkit-any-link{
                 cursor: pointer;
                 color: webkit-link;
             }
             &::before{
                 content:"";
-                width: 2px;
+                width: 1px;
                 height: 15px;
                 background:#aaacac;
                 position: absolute;
-                left: 15px;
+                right: -10px;
                 top: 50%;
                 margin-top: -7px;
             }
